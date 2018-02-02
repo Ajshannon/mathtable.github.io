@@ -21,41 +21,39 @@
       Output: product line totals (double)
 */
 
-function calculateProdTotal (price, quantity) {
+function calculateProdTotal(price, quantity) {
     return price * quantity;
-    
+
 }
 
-function calculateSubtotal (prodTotals) {
-    
-    return prodTotals[0] + prodTotals[1] + prodTotals[2];   // replace this!
+function calculateSubtotal(prodTotals) {
+
+    return prodTotals[0] + prodTotals[1] + prodTotals[2]; // replace this!
 }
 
 function calculateTaxes(grossTotal, taxRate) {
     taxes = subtotal * TAX_RATE;
-    return(taxes) ;   // replace this!
+    return (taxes); // replace this!
 }
 
-function calculateTotal (grossTotal, addedShipping, addedTax) {
+function calculateTotal(grossTotal, addedShipping, addedTax) {
     total = subtotal + taxes + addedShipping;
-    return (total);   // replace this!
+    return (total); // replace this!
 }
 
 function updateProdAvailability(product, selected, availability) {
 
-let productAvailability = ""
-    if (selected > availability) {
-        Label = product + "OUT OF STOCK";
-        productAvailability = "OUT_OF_STOCK";
-    }   
-        else if (selected == availability) {
-        Label = product + "LIMITED STOCK";
-        productAvailability = "LIMITED_SUPPLY";
-    }
-        else if (selected < availability) {
-        Label = product + "IN STOCK";
+    let productAvailability = ""
+    if (selected - availability > 5) {
+        Label = product + " IN STOCK";
         productAvailability = "AVAILABLE";
+    } else if (availability - selected < 5 && availability - selected > 0) {
+        Label = product + " LIMITED STOCK";
+        productAvailability = "LIMITED_SUPPLY";
+    } else {
+        Label = product + " NONE FOR GRETCHEN WIENER";
+        productAvailability = "OUT_OF_STOCK";
     }
-    updateProdAvailabilityLabel (product, Label, productAvailability)
-    return; 
+    updateProdAvailabilityLabel(product, Label, productAvailability)
+    return;
 }
