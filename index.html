@@ -1,81 +1,96 @@
-Ò<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" type="text/css" href="cart.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="cart_logic.js"></script>
-    <script type="text/javascript" src="cart.js"></script>
-    <title>Shopping Cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .qty {
+            width: 5em;
+            text-align: center;
+            font-size: 1em;
+            padding: .25em;
+        }
+    </style>
 </head>
+
 <body>
-    
-    <main>
-            <h1>Shopping Cart</h1>
-            <section class="cart">
+    <div>
 
-                <article class="item" id="bananas">                    
+        <input type="number" class="qty" min="11" /> Row and Colums
 
-                        <div class="info">
-                            <img src="images/banana.jpeg" alt="" class="itemImg" />
-                            <h3>Banana</h3>
-                            <span class="prodQuantity"> 
-                                <input type="number" class="qty" min="0"/>
-                                x <span class="prodPrice">$0.00</span> 
-                            </span>
-                            <span class="stockStatus"> In Stock</span>
-                        </div>  
-                                                    
-                        <div class="prodTotal">
-                            <span>$0.00</span>
-                        </div>
-                </article>
+    </div>
+    <p></p>
 
-                <article class="item" id="apples">                    
+    <!-- else can not have any conditions -->
+    <!-- when writing to the dom you need to have quotations around everything that gets written to the DOM (html) -->
+    <!-- ( i % 2 === 0 ) checking if its even or rather divisible by two -->
+    <!-- ( i % 3 === 0 ) checking to see if it is a divisible by 3 -->
 
-                        <div class="info">                        
-                            <img src="images/apple.png" alt="" class="itemImg" />
-                            <h3>Apple</h3>
-                            <span class="prodQuantity"> 
-                                <input type="number" class="qty" min="0"/>
-                                x <span class="prodPrice">$0.00</span> 
-                            </span>
-                            <span class="stockStatus"> In Stock</span>
-                        </div>  
-                
-                        <div class="prodTotal">
-                            $0.00
-                        </div>
+    <!-- <script>
+        function tableCreate() {
+            let body = document.body,
+                tbl = document.createElement('table');
+            tbl.style.width = '100px';
+            tbl.style.border = '1px solid black';
 
-                </article>
-                
-                <article class="item" id="oranges">
+            for (let i = 0; i < 10; i++) {
+                let tr = tbl.insertRow();
+                for (let j = 0; j < 10; j++) {
+                    if (i == 1 && j == 1) {
+                        let td = tr.insertCell();
+                        td.appendChild(document.createTextNode('B'));
+                        td.style.border = '1px solid black';
+                    } else {
+                        let td = tr.insertCell();
+                        td.appendChild(document.createTextNode('D'));
+                        td.style.border = '1px solid black';
+                        if (i == 1 && j == 1) {
+                            td.setAttribute('rowSpan', '0');
+                        }
+                    }
+                }
+            }
+            body.appendChild(tbl);
+        }
+        tableCreate();
+    </script> -->
+    <script>
+        var color_td;
+        document.write("<table border='1px'>"); //writes the opening table tag into the dom.
 
-                        <div class="info">                            
-                            <img src="images/orange.jpeg" alt="" class="itemImg" />
-                            <h3>Orange</h3>
-                            <span class="prodQuantity"> 
-                                <input type="number" class="qty" min="0"/>
-                                x <span class="prodPrice">$0.00</span> 
-                                </span>
-                            <span class="stockStatus"> In Stock</span>
-                        </div>  
-                                        
-                        <div class="prodTotal">
-                            $0.00
-                        </div>
+        for (var i = x; i < 11; i++) { //declares the variable i to 1 and as long as its less then 11 add 1 to the value. (1 being a another row)
+            let x = ('.qty')
+            document.write("<tr style='height:15px;'>"); //write the opening table cell tag into the dom. 
 
-                </article>
-            
-        </section>
-                        
-        <section class="totals">
-            <div class="totalRow"><span class="label">Subtotal</span><span class="value subtotal">$35.00</span></div>            
-            <div class="totalRow"><span class="label">Shipping</span><span class="value shipping">$5.00</span></div>            
-            <div class="totalRow"><span class="label">Tax</span><span class="value taxes">$4.00</span></div>
-            <div class="totalRow final"><span class="label">Total</span><span class="value total">$44.00</span></div>
-            <div class="totalRow"><a href="#" class="btn continue">Checkout</a></div>
-        </section>
-    </main>
-      
+            for (var j = x; j < 11; j++) {
+
+                if (j == 1 || i == 1) {
+                    color_td = "steelblue";
+                } else {
+                    color_td = "white";
+                }
+
+                document.write("<td style='width:30px;background-color:" + color_td + "'>" + i * j + "</td>");
+            }
+            document.write("</tr>");
+        }
+
+        document.write("</table>");
+    </script>
 </body>
+<!-- if (i == 1 && j == 1) {
+    let td = tr.insertCell();
+    td.appendChild(document.createTextNode(''));
+    td.style.border = '1px solid black';
+} else {
+    let td = tr.insertCell();
+    td.appendChild(document.createTextNode(''));
+    td.style.border = '1px solid black';
+    if (i == 1 && j == 1) {
+        td.setAttribute('rowSpan', '1');
+    } -->
+
 </html>
