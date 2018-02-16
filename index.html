@@ -29,40 +29,13 @@
     <!-- ( i % 2 === 0 ) checking if its even or rather divisible by two -->
     <!-- ( i % 3 === 0 ) checking to see if it is a divisible by 3 -->
 
-    <!-- <script>
-        function tableCreate() {
-            let body = document.body,
-                tbl = document.createElement('table');
-            tbl.style.width = '100px';
-            tbl.style.border = '1px solid black';
-
-            for (let i = 0; i < 10; i++) {
-                let tr = tbl.insertRow();
-                for (let j = 0; j < 10; j++) {
-                    if (i == 1 && j == 1) {
-                        let td = tr.insertCell();
-                        td.appendChild(document.createTextNode('B'));
-                        td.style.border = '1px solid black';
-                    } else {
-                        let td = tr.insertCell();
-                        td.appendChild(document.createTextNode('D'));
-                        td.style.border = '1px solid black';
-                        if (i == 1 && j == 1) {
-                            td.setAttribute('rowSpan', '0');
-                        }
-                    }
-                }
-            }
-            body.appendChild(tbl);
-        }
-        tableCreate();
     </script> -->
     <script>
         var color_td;
         document.write("<table border='1px'>"); //writes the opening table tag into the dom.
-
+        let x = 1;
         for (var i = x; i < 11; i++) { //declares the variable i to 1 and as long as its less then 11 add 1 to the value. (1 being a another row)
-            let x = ('.qty')
+            
             document.write("<tr style='height:15px;'>"); //write the opening table cell tag into the dom. 
 
             for (var j = x; j < 11; j++) {
@@ -81,16 +54,5 @@
         document.write("</table>");
     </script>
 </body>
-<!-- if (i == 1 && j == 1) {
-    let td = tr.insertCell();
-    td.appendChild(document.createTextNode(''));
-    td.style.border = '1px solid black';
-} else {
-    let td = tr.insertCell();
-    td.appendChild(document.createTextNode(''));
-    td.style.border = '1px solid black';
-    if (i == 1 && j == 1) {
-        td.setAttribute('rowSpan', '1');
-    } -->
 
 </html>
